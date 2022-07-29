@@ -78,7 +78,7 @@ function addData(div){
   let span = document.createElement("span");
 
   span.classList.add("tarefa__data");
-  span.innerText = `${data.toLocaleDateString()} | ${data.getHours()}:${data.getMinutes()}`;
+  span.innerText = `Criado dia ${data.toLocaleDateString()} as ${data.getHours()}:${data.getMinutes()}`;
 
   div.appendChild(span);
   return

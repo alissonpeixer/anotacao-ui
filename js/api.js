@@ -1,5 +1,5 @@
 function newTarefa(data){ 
-  fetch("http://192.168.3.97:9901/",
+  fetch("https://tarefasapi.alissonpeixer.repl.co/",
   {
       headers: {
         'Content-Type': 'application/json'
@@ -14,7 +14,7 @@ function newTarefa(data){
 
 getTarefa()
 function getTarefa(){ 
-  fetch("http://192.168.3.97:9901/")
+  fetch("https://tarefasapi.alissonpeixer.repl.co/")
   .then((res) => res.json())
   .then((data) => {
     console.log(data.length)
@@ -40,9 +40,7 @@ function getTarefa(){
 
 function deletTarefa(tarefaId){ 
 
-
-
-  fetch("http://192.168.3.97:9901/remove",
+  fetch("https://tarefasapi.alissonpeixer.repl.co/remove",
   {
       headers: {
         'Content-Type': 'application/json'
