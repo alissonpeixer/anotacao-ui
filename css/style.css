@@ -61,7 +61,7 @@ html, body{
   background: var(--dark-secondary);
   border-radius: 10px;
   height: 200px;
-  width: 400px;
+  width: 30vh;
   max-height: 200px;
   max-width: 400px;
   text-align: center;
@@ -86,7 +86,7 @@ html, body{
 }
 
 .tarefa__li{  
-  width: 400px;
+  width: 30vh;
   padding: 30px;
   border: 1px solid var(--dark-secondary);
   border-radius: 10px;
@@ -111,17 +111,15 @@ html, body{
 .tarefa__remove{
 
   cursor: pointer;
-
+  width: 20px;
+  height: 20px;
+ 
   display: flex;
   justify-content: flex-end;
+
+  background-image: url(../assents/img/trashWhite.svg);
 }
 
-.tarefa__remove svg{
-
-  width: 20px;
-  stroke: #a7a7a7;
-}
-.tarefa__remove svg:hover{
- 
-  stroke: #e8e8e8;
+.tarefa__remove:hover{
+  background-image: url(../assents/img/trashWhite2.svg);
 }
