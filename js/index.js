@@ -24,9 +24,10 @@ document.addEventListener('click', (e)=>{
   const classTarefa = classBtn.split(' ');
 
   const removeli = document.getElementById(classTarefa[0]);
- 
-  removeli.remove()
 
+  deletTarefa(classTarefa[0]);
+  removeli.remove()
+  alert('Tarefa apagada!');
 })
 
 
@@ -85,10 +86,9 @@ function addData(div){
 
 
 function removeTarefa(div, randomID){
-  
+ 
   let span = document.createElement("span",);
   span.setAttribute("class", `${randomID} tarefa__remove`);
-  span.innerHTML = ``
   div.appendChild(span);
   return 
 }
