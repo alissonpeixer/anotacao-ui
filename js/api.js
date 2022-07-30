@@ -1,5 +1,5 @@
 function newTarefa(data){ 
-  fetch("https://tarefasapi.alissonpeixer.repl.co/",
+  fetch("https://TarefasAPI.alissonpeixer.repl.co",
   {
       headers: {
         'Content-Type': 'application/json'
@@ -14,7 +14,7 @@ function newTarefa(data){
 
 getTarefa()
 function getTarefa(){ 
-  fetch("https://tarefasapi.alissonpeixer.repl.co/")
+  fetch("https://TarefasAPI.alissonpeixer.repl.co")
   .then((res) => res.json())
   .then((data) => {
     console.log(data.length)
@@ -40,7 +40,7 @@ function getTarefa(){
 
 function deletTarefa(tarefaId){ 
 
-  fetch("https://tarefasapi.alissonpeixer.repl.co/remove",
+  fetch("https://TarefasAPI.alissonpeixer.repl.co/remove",
   {
       headers: {
         'Content-Type': 'application/json'
@@ -53,3 +53,6 @@ function deletTarefa(tarefaId){
   .then((res) => res.json())
   .then((data) => console.log(data))
 }
+
+
+

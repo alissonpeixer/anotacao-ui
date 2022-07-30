@@ -17,17 +17,16 @@ btn.addEventListener("click", (e) =>{
 
 document.addEventListener('click', (e)=>{
   const el = e.target;
-  const classBtn = el.className
-  if(!Boolean(classBtn)){
-    return
+  const classTarefa = el.className.split(' ');
+
+  if(classTarefa[1] === "tarefa__remove"){
+    console.log("aqui estou")
+    const removeli = document.getElementById(classTarefa[0]);  
+    deletTarefa(classTarefa[0]);
+    removeli.remove()
+    alert('Anotação apagada!');
   }
-  const classTarefa = classBtn.split(' ');
 
-  const removeli = document.getElementById(classTarefa[0]);
-
-  deletTarefa(classTarefa[0]);
-  removeli.remove()
-  alert('Tarefa apagada!');
 })
 
 
@@ -48,7 +47,8 @@ function creatNewTarefa(tarefa){
     tarefa: tarefa,
     data: `${data.toLocaleDateString()} | ${data.getHours()}:${data.getMinutes()}`
   });
-
+  
+  alert('Anotação criada!');
   clearinput();
   return;
 }
