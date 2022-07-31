@@ -1,20 +1,6 @@
-function newTarefa(data){ 
-  fetch("https://TarefasAPI.alissonpeixer.repl.co",
-  {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: "POST",
-      body: JSON.stringify(data)
-  })
-  .then((res) => res.json())
-  .then((data) => console.log(data))
-}
-
-
 getTarefa()
 function getTarefa(){ 
-  fetch("https://TarefasAPI.alissonpeixer.repl.co")
+  fetch("https://TarefasAPI.alissonpeixer.repl.co/")
   .then((res) => res.json())
   .then((data) => {
     console.log(data.length)
@@ -35,7 +21,18 @@ function getTarefa(){
 }
 
 
-
+function newTarefa(data){ 
+  fetch("https://TarefasAPI.alissonpeixer.repl.co/",
+  {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify(data)
+  })
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+}
 
 
 function deletTarefa(tarefaId){ 
@@ -53,6 +50,7 @@ function deletTarefa(tarefaId){
   .then((res) => res.json())
   .then((data) => console.log(data))
 }
+
 
 
 
