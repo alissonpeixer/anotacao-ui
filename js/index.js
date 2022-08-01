@@ -138,7 +138,7 @@ function newId(){
 
 function clearinput(){
   tarefasInput.value = "";
-  lengthText.innerText  = `0/140`;
+  lengthText.innerText  = `0`;
   btnAdd.setAttribute("class", "btn__add"); 
   return
 }
