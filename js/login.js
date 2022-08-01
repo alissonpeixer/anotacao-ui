@@ -19,7 +19,7 @@ const userLoged = localStorage.getItem('token');
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem("token", data.acessToken);
-        window.location.href = "/Web";
+        window.location.href = "https://alissonpeixer.github.io/anotacao-ui/notes.html";
       })
 
   }
