@@ -1,6 +1,6 @@
 const userLoged = localStorage.getItem('token');
   if(userLoged){
-    window.location.href = "/Web/notes.html";
+    window.location.href = "https://alissonpeixer.github.io/anotacao-ui/notes.html";
   }
 
 
@@ -9,7 +9,7 @@ const userLoged = localStorage.getItem('token');
     const login = document.getElementById("login").value;
     const password = document.getElementById("password").value;
 
-    fetch("http://192.168.3.77:9901/login",
+    fetch("https://TarefasAPI.alissonpeixer.repl.co/login",
       {
         headers: {
           "Authorization": "Basic " + btoa(login + ":" + password)
