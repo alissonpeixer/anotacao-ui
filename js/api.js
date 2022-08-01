@@ -1,6 +1,6 @@
 getTarefa()
 function getTarefa(){ 
-  fetch("https://TarefasAPI.alissonpeixer.repl.co/")
+  fetch("http://192.168.3.77:9901/anotacao")
   .then((res) => res.json())
   .then((data) => {
     console.log(data.length)
@@ -11,7 +11,7 @@ function getTarefa(){
   
       li.setAttribute("id",`${tarefa.tarefaId}`);
       
-      createFooter(li,`${tarefa.tarefaId}`);
+      createFooterAPI(li,tarefa);
       listTarefas.appendChild(li);
 
       return;
@@ -22,7 +22,7 @@ function getTarefa(){
 
 
 function newTarefa(data){ 
-  fetch("https://TarefasAPI.alissonpeixer.repl.co/",
+  fetch("http://192.168.3.77:9901/anotacao",
   {
       headers: {
         'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ function newTarefa(data){
 
 function deletTarefa(tarefaId){ 
 
-  fetch("https://TarefasAPI.alissonpeixer.repl.co/remove",
+  fetch("http://192.168.3.77:9901/remove",
   {
       headers: {
         'Content-Type': 'application/json'
@@ -54,3 +54,27 @@ function deletTarefa(tarefaId){
 
 
 
+
+
+
+
+function createFooterAPI(li,tarefa){
+
+  let div = document.createElement("div");
+  div.classList.add("tarefa__footer");
+  creatData(div,tarefa.data.split("|"));
+  removeTarefa(div,`${tarefa.tarefaId}`);
+
+  return li.appendChild(div);
+}
+
+
+function creatData(div,data){
+  let span = document.createElement("span");
+
+  span.classList.add("tarefa__data");
+  span.innerText = `📝 Criado dia ${data[0]} as ${data[1]}`;
+
+  div.appendChild(span);
+  return
+}

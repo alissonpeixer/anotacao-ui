@@ -13,7 +13,7 @@ function singUp() {
   }
 
 
-  fetch('https://tarefasapi.alissonpeixer.repl.co/singup',{
+  fetch('http://192.168.3.77:9901/singup',{
     headers: {'Content-Type': 'application/json'},
     method: 'POST',
     body: JSON.stringify({
