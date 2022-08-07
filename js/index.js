@@ -1,35 +1,70 @@
-const btn = document.querySelector(".btn__add");
 const tarefasInput = document.querySelector(".tarefas");
 
-const listTarefas = document.querySelector(".tarefas__");
+const listTarefas = document.querySelector(".note_container");
 
+const btnAdd = document.getElementById("btn_add")
 
-btn.addEventListener("click", (e) =>{
-  e.preventDefault();
-  
-  if(!tarefasInput.value){
-    return;
-  }
+const textLength = document.getElementById("length_text");
+const lengthText = document.querySelector(".length___")
 
-  creatNewTarefa(tarefasInput.value);
+// const logout = document.getElementById("btn_logout");
+
+document.addEventListener('DOMContentLoaded', e =>{
+  btnAdd.setAttribute("class", "btn__add"); 
 })
 
+// logout.addEventListener('click', e =>{
+//   localStorage.removeItem("token");
+//   window.location.href = "/Web";
+// })
 
-document.addEventListener('click', (e)=>{
+document.addEventListener('click', e =>{
   const el = e.target;
-  const classBtn = el.className
-  if(!Boolean(classBtn)){
-    return
+  const classTarefa = el.className.split(' ');
+
+  if(classTarefa[1] === "tarefa__remove"){
+    const removeli = document.getElementById(classTarefa[0]);  
+    deletTarefa(classTarefa[0]);
+    removeli.remove()
+    alert('Anotação apagada!');
   }
-  const classTarefa = classBtn.split(' ');
 
-  const removeli = document.getElementById(classTarefa[0]);
-
-  deletTarefa(classTarefa[0]);
-  removeli.remove()
-  alert('Tarefa apagada!');
 })
 
+document.addEventListener('keyup', e =>{
+
+  if(tarefasInput.value.length > 140){
+    lengthTexts(tarefasInput.value.length)
+    btnAdd.setAttribute("class", "btn__nosend");
+    textLength.setAttribute("class", "length__text n__nosend");
+    return 
+  }
+  console.log(tarefasInput.value.replace(/\s/g, '           '))
+  btnAdd.setAttribute("class", "btn__send btn__add");
+  textLength.setAttribute("class", "length__text");
+  lengthTexts(tarefasInput.value.length);
+  console.log(tarefasInput.value.length);
+
+
+  btnAdd.addEventListener('click', e =>{
+    e.preventDefault();
+     
+    if(!tarefasInput.value){
+      return;
+    }
+    if(e.target.className === "btn__nosend"){
+      return;
+    }
+    creatNewTarefa(tarefasInput.value);
+  })
+})
+
+function lengthTexts(data){
+  const valuE = data
+  console.log(data)
+  lengthText.innerText  = `${valuE}` 
+
+}
 
 
 function creatNewTarefa(tarefa){
@@ -44,11 +79,13 @@ function creatNewTarefa(tarefa){
   listTarefas.appendChild(li);
 
   newTarefa({
+    username: "alisson",
     tarefaID: randomID,
     tarefa: tarefa,
     data: `${data.toLocaleDateString()} | ${data.getHours()}:${data.getMinutes()}`
   });
-
+  
+  alert('Anotação criada!');
   clearinput();
   return;
 }
@@ -78,7 +115,7 @@ function addData(div){
   let span = document.createElement("span");
 
   span.classList.add("tarefa__data");
-  span.innerText = `Criado dia ${data.toLocaleDateString()} as ${data.getHours()}:${data.getMinutes()}`;
+  span.innerText = `📝 Criado dia ${data.toLocaleDateString()} as ${data.getHours()}:${data.getMinutes()}`;
 
   div.appendChild(span);
   return
@@ -104,7 +141,13 @@ function newId(){
 
 function clearinput(){
   tarefasInput.value = "";
-  tarefasInput.focus();
-
+  lengthText.innerText  = `0`;
+  btnAdd.setAttribute("class", "btn__add"); 
   return
 }
+
+
+
+
+
+

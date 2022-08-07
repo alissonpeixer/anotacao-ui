@@ -4,122 +4,270 @@
   --green-primary: #00a868;
   --green-dark: #00734d;
 
+  /* Red */
+  --red: #d90000a2;
+
+  
   /* Dark */
   --dark-primary: #20252a;
   --dark-secondary: #31383f;
   --dark-border-opacity: #31383f67;
+  --dark-border-shadow: #1f1f1f;
 
   /* Light */
   --light-priamry: #ffffff;
   --light-secondary: #f7f9fd;
   --light-tertiary: #eff4f8;
   --light-quaternary: #e8e8e8;
-}
+  --light-opacity: #f7f9fd60;
+  --light-btn: rgba(247, 249, 253, 0.103);
+  --light-btn-hover: rgba(247, 249, 253, 0.5);
 
+  --black: #18161f;
+  --gray: #787490;
+  --white-ice: #d6d4e2;
+  --whute: #ffffff;
+  --blue-marine-: #00d9c0;
+}
 
 html, body{
   background-color: var( --dark-primary);
-
   color: var(--light-quaternary);
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
-}
-
-.title__{
-  font-weight: 700;
-  text-align: center;
-  font-size: 1.5rem;
-  width: 200px;
-  margin-bottom: 50px;
-}
-
-.container {
-  padding: 30px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input__tarefas{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 270px;
-  justify-content: space-around;  
-}
-.input__tarefas button{
-  width: 200px;
-  height: 40px;
-  border-radius: 90px;
-}
-
-.input__tarefas textarea{
-  outline: 1px solid #00000084;
-  border: none;
-  padding: 10px;
-  background: var(--dark-secondary);
-  border-radius: 10px;
-  height: 200px;
-  width: 30vh;
-  max-height: 200px;
-  max-width: 400px;
-  text-align: center;
-  color: var(--light-secondary);
-  font-size: 20px;
-
-  margin-bottom: 30px;
-}
-.input__tarefas textarea:focus{
-  padding: 10px;
-  outline: none;
-}
-
-
-.tarefas__{
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.tarefa__div{
-  padding: 14px 0;
-}
-
-.tarefa__li{  
-  width: 30vh;
-  padding: 30px;
-  border: 1px solid var(--dark-secondary);
-  border-radius: 10px;
-  margin-top: 20px;
   
+  background: url(../assents/img/blur.png) fixed;
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  overflow-x: hidden;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px; 
+}
+
+.left{
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+}
+.left img{
+  width: 55px;
+  height: 55px;
+}
+.nav__icon{
+  width: 70px;
+  padding: 40px 0;
+  
+}
+.nav__icon svg{
+  height: 40px;
+  stroke: var(--light-priamry);
+}
+.nav__icon svg:hover{
+  stroke: var(--blue-marine-);
+  cursor: pointer;
+}
+
+/* Input Area */
+#input_area{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  width: 100%;
+  
+  padding: 40px 0;
+}
+
+.btn_sec{
+  padding: 20px;
+  z-index: 0;
+}
+
+.btn_sec input{
+  /* background: none; */
+  outline: none;
+  color: var(--light-priamry);
+  background: var(--light-btn);
+}
+.btn_sec > #search {
+  padding: 10px;
+  width: 80px;
+  border: 1px solid var(--blue-marine-);
+  border-radius: 40px 0 0 40px;
+}
+.btn_sec > #add {
+  padding: 10px;
+  width: 80px;
+  border: 1px solid var(--blue-marine-);
+  border-radius: 0 40px 40px 0;
+}
+
+.notetext_sec{
+  transition: all 2s;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.notetext_sec textarea{
+  transition: all 2s;
+  background: transparent;
+  color: var(--light-priamry);
+  border-radius: 20px;
+  padding: 10px;
+  outline: 1px solid var(--blue-marine-);
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+}
+.notetext_sec input{
+  transition: all 2s;
+  background: transparent;
+  color: var(--light-priamry);
+  border-radius: 20px;
+  padding: 10px;
+  outline: 1px solid var(--blue-marine-);
+  overflow: hidden;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.notetext_sec textarea:focus{
+  transition: all 1s;
+  display: flex;
+  align-items: flex-start;
+
+  background: var(--dark-border-shadow);
+}
+
+#blur{
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* height: 100vh; */
+
+  background:var(--dark-border-opacity);
+}
+
+#container{
+  display: flex;
+  /* height: 100vh; */
+  flex-direction: row-reverse;
+  /* justify-content: space-around; */
+}
+
+#sidebar{
+  transition: transform 0.4s ease-in;
+  position: absolute;
+  animation: all 4s;
+ transform: translate(100%);
+  width: 20vw;
+
+  background-color: var(--dark-border-shadow);
+}
+#sidebar.active{
+ transform: translate(0);
+}
+
+#page{
+  flex: 1;
+  width: 100vw;
+
+}
+
+
+/* Tarefa area */
+#note_area{
+
+  min-height: 100vh;
+  border-left: 4px solid var(--dark-secondary);
+}
+
+.note_container{
+  padding: 60px 0;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+
+.card_note{
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 300px;
+  height: 300px;
+  background: var(--dark-border-opacity);
+  border: 1px solid var(--dark-primary);
+  border-radius: 30px;
+  line-height: 20px;
+  margin: 20px;
+}
+
+
+#note__{
+  text-align: start;
+  padding: 50px 0;
   overflow-wrap: break-word;
 }
 
 
-.tarefa__footer{
+
+
+/* area do usuario  */
+.user__info{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
-.tarefa__data{
-  font-size: 10px;
-  font-weight: 400;
-  color: #e8e8e893;
+
+.user__pic{
   display: flex;
-  
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: var(--light-btn-hover);
+  border: 1px solid var(--dark-border-opacity);
+  border-radius: 100px;
+  margin: 12px 0;
+}
+.user__pic img {
+  width: 99%;
+  height: 100%;
+  border-radius: 100px;
+
+}
+.user__data{
+
+  font-size: 0.8rem;
 }
 
-.tarefa__remove{
-
+#right{
+  width: 50px;
+  /* padding: 20px; */
+}
+#right svg{
+  padding: 10px;
+}
+#right svg:hover{
   cursor: pointer;
-  width: 20px;
-  height: 20px;
- 
-  display: flex;
-  justify-content: flex-end;
-
-  background-image: url(../assents/img/trashWhite.svg);
+  stroke: var(--blue-marine-);
 }
+.closed__sidebar svg:hover{
+  stroke: var(--blue-marine-);
+  cursor: pointer;
+}
+.closed__sidebar svg{
 
-.tarefa__remove:hover{
-  background-image: url(../assents/img/trashWhite2.svg);
+  height: 40px;
 }

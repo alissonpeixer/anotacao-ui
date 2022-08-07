@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AzNote</title>
+
+  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/913619847240364033/915460442665660426/Untitled-2-Recovrered.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- <button id="btn_logout">Logaut</button> -->
+  <header id="header">
+    <div class="header__container">
+      <div class="title__">
+        <img src="https://cdn.discordapp.com/attachments/913619847240364033/915460442665660426/Untitled-2-Recovrered.png" alt="" width="40px">
+
+      </div>
+      <div class="navbar__">
+        <span class="nav__icon">
+          <svg class="navicon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 20H30"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 12H30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M18 28L30 28"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span> 
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="input__tarefas">
+      <div class="tarefa__length">
+        <span id="length_text"><span id="length_text" class="length___">0</span>/ 140</span>
+      </div>
+      <div class="tarefa__textarea">
+        <textarea name="Tarefas" class="tarefas" required ></textarea>  
+        <button id="btn_add">Adicionar</button>
+      </div>
+    </div>
+
+   
+    <div class="tarefa__container">
+      <div class="tarefas__">
+        
+      </div>
+    </div>
+   
+  </div>
+
+  <script src="./js/href.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/api.js"></script>
+</body>
+</html>
