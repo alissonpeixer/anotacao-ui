@@ -1,1 +1,1 @@
-# Lista de tarefas JavaScript Vanilla/
+# Lista de tarefas
