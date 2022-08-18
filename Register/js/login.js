@@ -1,7 +1,7 @@
 const userLoged = localStorage.getItem('token');
 
 if (userLoged) {
-  window.location.href = "Notes";
+  window.location.href = "https://alissonpeixer.github.io/anotacao-ui/Notes";
 }
 
 function login() {
