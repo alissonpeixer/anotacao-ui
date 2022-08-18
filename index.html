@@ -1,38 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de tarefas</title>
+  <title>AzNote+</title>
+  
   <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/913619847240364033/915460442665660426/Untitled-2-Recovrered.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/home.css">
+
+
 </head>
-<body>
-  <div class="container">
-    <div class="title__">
-      <h1>Anotações</h1>
-    </div>
-    <div class="input__tarefas">
-      <textarea name="Tarefas" class="tarefas" required placeholder="Digite aqui uma anotação!"></textarea>
-     
-      <button  style="cursor: pointer;" class="btn__add">Adicionar</button>
-    </div>
-
-    <div class="list__tarefas"> 
-      <div class="tarefas__">
-        
+<body> 
+    <main id="container">
+      <div class="title-wealcomed">
+        <h1>AzNote+</h1>
+        <span>Welcomed!</span>
       </div>
-    </div>
+      <div class="nav__">
+        <span class="register__msg"><a href="/Login">Login</a></span>
+        <span class="register__msg"><a href="/Register">Registra-se</a></span>
+      </div>
+    </main>
 
-  </div>
-
- 
-  <script src="./js/index.js"></script>
-  <script src="./js/api.js"></script>
 </body>
 </html>
