@@ -36,7 +36,7 @@ function singUp() {
     localStorage.setItem("token", data.acessToken);
     localStorage.setItem("userdata", JsonList );
     alert("Conta criada com sucesso!")
-    window.location.href = "Notes";
+    window.location.href = "https://alissonpeixer.github.io/anotacao-ui/Notes";
   }
 
   )
