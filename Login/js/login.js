@@ -1,7 +1,7 @@
 const userLoged = localStorage.getItem('token');
 
 if (userLoged) {
-  window.location.href = "anotacao-ui/Notes";
+  window.location.href = "Notes";
 }
 
 function login() {
@@ -32,7 +32,7 @@ function login() {
       const JsonList = JSON.stringify(info)
       localStorage.setItem("token", data.acessToken);
       localStorage.setItem("userdata", JsonList );
-      window.location.href = "anotacao-ui/Notes";
+      window.location.href = "Notes";
     })
 
 }

@@ -36,7 +36,7 @@ function singUp() {
     localStorage.setItem("token", data.acessToken);
     localStorage.setItem("userdata", JsonList );
     alert("Conta criada com sucesso!")
-    window.location.href = "anotacao-ui/Notes";
+    window.location.href = "Notes";
   }
 
   )
